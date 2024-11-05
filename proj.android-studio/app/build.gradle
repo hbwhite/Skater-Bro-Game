@@ -1,0 +1,286 @@
+import org.apache.tools.ant.taskdefs.condition.Os
+
+// Crashlytics
+buildscript {
+    repositories {
+        maven { url 'https://maven.fabric.io/public' }
+    }
+    dependencies {
+        classpath 'io.fabric.tools:gradle:1.25.4'
+    }
+}
+
+apply plugin: 'com.android.application'
+
+// Crashlytics
+apply plugin: 'io.fabric'
+
+repositories {
+    maven { url 'https://maven.fabric.io/public' }
+    maven { url 'https://google.bintray.com/mobile-ads-adapters-android' }
+    // MoPub
+    maven { url "https://s3.amazonaws.com/moat-sdk-builds" }
+}
+
+dependencies {
+    // Crashlytics needs NDK intergration to see crash logs of C++ code:
+    // https://docs.fabric.io/android/crashlytics/ndk.html
+    // http://discuss.cocos2d-x.org/t/crashlytics-cocos2dx-3-7-android-studio/23098/31
+    // Crashlytics
+    api('com.crashlytics.sdk.android:crashlytics:2.9.8@aar') {
+        transitive = true
+    }
+    implementation 'com.crashlytics.sdk.android:crashlytics-ndk:2.0.5@aar'
+    // Crashlytics NDK
+    // MultiDex support because Fabric.io plugins cause the app to exceed the 64K limit
+    // https://stackoverflow.com/questions/32097150/fabric-crashlytics-noclassdeffounderror-only-on-certain-devices
+    // https://twittercommunity.com/t/noclassdeffounderror-when-add-twitter-fabric-sdk/51834/3
+    // MultiDex
+    implementation 'com.android.support:multidex:1.0.3'
+    // Facebook (sdkbox share)
+    // also automatically tracks app installs for ad campaign
+    implementation 'com.facebook.android:facebook-share:4.39.0'
+    // Google Play Games (sdkbox play & HWAvailability.isGooglePlayAvailable())
+    implementation 'com.google.android.gms:play-services-games:16.0.0'
+    // Other app-specific libs
+    // Needed for SDKBOX plugins
+    implementation fileTree(include: ['*.jar'], dir: 'libs')
+    // cocos2d-x
+    implementation project(':libcocos2dx')
+}
+
+// MUST enable NDK support to get C++ crash logs
+crashlytics {
+    enableNdk true
+    androidNdkOut 'build/intermediates/ndkBuild/release/obj/local'
+    androidNdkLibsOut 'build/intermediates/ndkBuild/release/obj/local'
+    manifestPath 'AndroidManifest.xml'
+}
+
+// -- End Crashlytics
+
+task removeSpriteNameExtensions {
+    //
+    // Remove extensions (-2x, -3x, ...) from sprite names so sprites can be loaded by
+    // the same name for every resolution
+    //
+    // This allows you to use Illustrator to export at different resolutions while
+    // keeping the final sprite names the same
+    //
+    // (TexturePacker is meant to scale down the largest resolution for you and then
+    // make the sprite names identical)
+    //
+
+    print 'Removing sprite name extensions ... '
+    // def stdout = new ByteArrayOutputStream()
+    exec {
+        commandLine 'sh', '-c', 'sed -i "" -E \'s/-[0-9]+x<\\/key>$/<\\/key>/g\' ../../Resources/res/*/*.plist'
+        // standardOutput = stdout
+    }
+    // println "Output:\n$stdout"
+    println 'done'
+}
+
+android {
+    compileSdkVersion PROP_COMPILE_SDK_VERSION.toInteger()
+    buildToolsVersion PROP_BUILD_TOOLS_VERSION
+    signingConfigs {
+        release {
+            if (project.hasProperty("RELEASE_STORE_FILE")) {
+                storeFile file(RELEASE_STORE_FILE)
+                storePassword RELEASE_STORE_PASSWORD
+                keyAlias RELEASE_KEY_ALIAS
+                keyPassword RELEASE_KEY_PASSWORD
+            }
+        }
+        debug {
+            keyAlias 'androiddebugkey'
+            keyPassword 'android'
+            storeFile file('/Users/harrison/.android/debug.keystore')
+            storePassword 'android'
+        }
+    }
+    defaultConfig {
+        applicationId "io.mindlessgames.skaterbro"
+        minSdkVersion PROP_MIN_SDK_VERSION
+        targetSdkVersion PROP_TARGET_SDK_VERSION
+
+        // app version
+        // version codes:
+        // 1.0      -> 1
+        // 1.1      -> 2
+        // 1.1.1    -> 3
+        // 1.2      -> 10
+        // 1.2.0.1  -> 12
+
+        versionCode 12
+        versionName "1.2.0.1"
+        multiDexEnabled true
+        externalNativeBuild {
+            ndkBuild {
+                if (!project.hasProperty("PROP_NDK_MODE") || PROP_NDK_MODE.compareTo('none') != 0) {
+                    // skip the NDK Build step if PROP_NDK_MODE is none
+                    targets 'MyGame'
+                    arguments 'NDK_TOOLCHAIN_VERSION=' + PROP_NDK_TOOLCHAIN_VERSION
+                    arguments 'APP_PLATFORM=android-' + PROP_MIN_SDK_VERSION
+
+                    def module_paths = [project.file("../../cocos2d").absolutePath,
+                                        project.file("../../cocos2d/cocos").absolutePath,
+                                        project.file("../../cocos2d/external").absolutePath]
+                    if (Os.isFamily(Os.FAMILY_WINDOWS)) {
+                        // should use '/'
+                        module_paths = module_paths.collect { it.replaceAll('\\\\', '/') }
+                        arguments 'NDK_MODULE_PATH=' + module_paths.join(";")
+                    } else {
+                        arguments 'NDK_MODULE_PATH=' + module_paths.join(':')
+                    }
+
+                    arguments '-j' + Runtime.runtime.availableProcessors()
+                    abiFilters.addAll(PROP_APP_ABI.split(':').collect { it as String })
+                }
+            }
+        }
+        signingConfig signingConfigs.release
+    }
+    sourceSets.main {
+        java.srcDir "src"
+        res.srcDir "res"
+        manifest.srcFile "AndroidManifest.xml"
+        assets.srcDir "../../Resources"
+    }
+    externalNativeBuild {
+        ndkBuild {
+            if (!project.hasProperty("PROP_NDK_MODE") || PROP_NDK_MODE.compareTo('none') != 0) {
+                // skip the NDK Build step if PROP_NDK_MODE is none
+                path "jni/Android.mk"
+            }
+        }
+    }
+    buildTypes {
+        release {
+            // If minifyEnabled is set to true, Crashlytics automatically uploads the mapping files
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+            if (project.hasProperty("RELEASE_STORE_FILE")) {
+                signingConfig signingConfigs.release
+            }
+            externalNativeBuild {
+                ndkBuild {
+                    arguments 'NDK_DEBUG=0'
+                }
+            }
+            signingConfig signingConfigs.release
+        }
+        debug {
+            minifyEnabled false
+            externalNativeBuild {
+                ndkBuild {
+                    arguments 'NDK_DEBUG=1'
+                }
+            }
+        }
+    }
+    productFlavors {
+    }
+
+    // https://developer.android.com/studio/build/configure-apk-splits.html
+    splits {
+
+        // Configures multiple APKs based on ABI.
+        abi {
+
+            // Enables building multiple APKs per ABI.
+            enable true
+
+            // By default all ABIs are included, so use reset() and include to specify that we only
+            // want APKs for x86 and x86_64.
+
+            // Resets the list of ABIs that Gradle should create APKs for to none.
+            reset()
+
+            // Specifies a list of ABIs that Gradle should create APKs for.
+            // include "armeabi", "armeabi-v7a", "arm64-v8a", "x86"
+            include(PROP_APP_ABI.split(':'))
+
+            // Specifies whether we want to also generate a universal APK that includes all ABIs.
+            // I plan on using this for archiving purposes
+            universalApk true
+        }
+    }
+
+    // Automatically generate different version codes for each split APK based on its ABI
+    //
+    // https://developer.android.com/google/play/publishing/multiple-apks.html#VersionCodes
+    // https://androidbycode.wordpress.com/2015/06/30/android-ndk-version-code-scheme-for-publishing-apks-per-architecture/
+
+    project.ext.versionCodes = [
+        'armeabi':      1,
+        'armeabi-v7a':  2,
+        'arm64-v8a':    3,
+        'mips':         5,
+        'mips64':       6,
+        'x86':          8,
+        'x86_64':       9
+    ]
+
+    android.applicationVariants.all { variant ->
+        variant.outputs.each { output ->
+//            print 'got output ' + output + '\n'
+//            print 'got abi ' + output.getFilter(com.android.build.OutputFile.ABI) + '\n'
+//            print 'version code would be ' + project.ext.versionCodes.get(output.getFilter(
+//                    com.android.build.OutputFile.ABI), 0) * 10000000 + android.defaultConfig.versionCode + '\n'
+
+            // OutputFile.ABI will be null for universal builds, so its ABI index will be 0,
+            // resulting in the lowest version code. This will make the universal build the "fallback"
+            // APK for devices that do not recognize the ABI-specific APKs.
+
+            output.versionCodeOverride =
+                    project.ext.versionCodes.get(output.getFilter(
+                            com.android.build.OutputFile.ABI), 0) * 10000000 + android.defaultConfig.versionCode
+        }
+    }
+
+    // twitter-core-3.2.0@aar contains Java 8 bytecode.
+    // The following must be added to include it, unless you want to change the minimum API level to 26 (bad for compatibility).
+    compileOptions {
+        sourceCompatibility 1.8
+        targetCompatibility 1.8
+    }
+}
+
+// added by sdkbox
+dependencies { compile 'com.facebook.android:facebook-android-sdk:4.39.0' }
+dependencies { compile 'com.google.android.gms:play-services-auth:16.0.1' }
+dependencies { compile 'com.google.android.gms:play-services-drive:16.0.0' }
+dependencies { compile 'com.twitter.sdk.android:twitter-core:3.2.0' }
+dependencies { compile 'com.twitter.sdk.android:tweet-composer:3.2.0' }
+dependencies { compile 'com.google.android.gms:play-services-ads:17.1.2' }
+
+// firebase for admob/firebase integration (firebase enables admob conversion tracking for our ads)
+dependencies { implementation 'com.google.firebase:firebase-core:16.0.6' }
+apply plugin: 'com.google.gms.google-services'
+dependencies { compile 'com.android.billingclient:billing:1.0' }
+
+// admob mediation adapters & third-party sdks
+dependencies {
+    // facebook
+    // implementation 'com.google.android.gms:play-services-ads:17.1.2'
+    // appcompat-v7 and recyclerview are included as dependencies in other packages (Android Studio will warn you about multiple versions)
+    compile project(':libPluginReviewResource')
+    // implementation 'com.android.support:appcompat-v7:xx.x.x'
+    // implementation 'com.android.support:recyclerview-v7:25.3.1' // Required by Facebook network
+    implementation 'com.facebook.android:audience-network-sdk:5.1.0'
+    implementation 'com.google.ads.mediation:facebook:5.1.0.0'
+    // unity
+    // implementation 'com.google.android.gms:play-services-ads:17.1.2'
+    // implementation 'com.android.support:appcompat-v7:xx.x.x'
+    implementation 'com.unity3d.ads:unity-ads:3.0.0'
+    implementation 'com.google.ads.mediation:unity:3.0.0.0'
+    // mopub
+    // implementation 'com.android.support:support-v4:xx.x.x'
+    implementation 'com.mopub.volley:mopub-volley:2.0.0'
+    implementation('com.mopub:mopub-sdk:5.4.1@aar') {
+        transitive = true
+    }
+    implementation 'com.google.ads.mediation:mopub:5.4.1.0'
+}

@@ -1,0 +1,7 @@
+include ':libcocos2dx', ':app'
+project(':libcocos2dx').projectDir = new File(settingsDir, '../cocos2d/cocos/platform/android/libcocos2dx')
+
+project(':app').projectDir = new File('app')
+
+include ':libPluginReviewResource'
+project(':libPluginReviewResource').projectDir = new File(settingsDir, '../cocos2d/cocos/platform/android/java/libs/plugin_review_res_project')

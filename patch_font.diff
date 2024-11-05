@@ -1,0 +1,26 @@
+--- ./cocos2d/cocos/2d/CCFontFreeType.cpp	2018-04-17 15:39:04.000000000 -0400
++++ ./cocos2d/cocos/2d/CCFontFreeType.cpp	2018-04-04 23:41:47.000000000 -0400
+@@ -545,6 +546,23 @@
+ {
+     int iX = posX;
+     int iY = posY;
++    
++    /* hwmod */
++    
++    // dest is a 1-dimensional array in memory of length (FontAtlas::CacheTextureWidth * FontAtlas::CacheTextureHeight)
++    // Values are copied in sequentially, "flattening" a grid of values into a single dimension.
++    // Values are copied from the rectangle starting at (posX, posY) and ending at (posX + bitmapWidth, posY + bitmapHeight).
++    // However, if (posX + bitmapWidth) or (posY + bitmapHeight) exceed FontAtlas::CacheTextureWidth or FontAtlas::CacheTextureHeight,
++    // the "flattened" index may overrun the end of the dest buffer.
++    // The following code checks for this condition and reduces bitmapWidth and bitmapHeight by the offset values,
++    // but limits them to FontAtlas::CacheTextureWidth and FontAtlas::CacheTextureHeight regardless.
++    
++    if (bitmapHeight + posY > FontAtlas::CacheTextureHeight) {
++        bitmapHeight = MIN(bitmapHeight - posY, FontAtlas::CacheTextureHeight);
++    }
++    if (bitmapWidth + posX > FontAtlas::CacheTextureWidth) {
++        bitmapWidth = MIN(bitmapWidth - posX, FontAtlas::CacheTextureWidth);
++    }
+ 
+     if (_distanceFieldEnabled)
+     {

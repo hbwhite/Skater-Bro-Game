@@ -1,0 +1,187 @@
+{
+    "android": {
+        "Facebook": {
+            "debug": false
+        },
+        "Share": {
+            "platforms": {
+                "SMS": {}, 
+                "Twitter": {
+                    "params": {
+                        "secret": "zBqGiYgphiPsu5HYtbKomI4XCxcxPvGsPe9JykYTYOqeKBlUQF",
+                        "key": "ICTLqKk0SILDbt8UUDhfv2PNp"
+                    }
+                }, 
+                "Facebook": {}, 
+                "Mail": {}
+            }
+        }, 
+        "AdMob": {
+            "testdevice": "2D4EB2D58463F407BD52DAA64E845ED0,FE20924C46522E2E204587EB339897C6,kGADSimulatorID",
+            "test": false,
+            "cache": {
+                "gameover": true, 
+                "home": true
+            }, 
+            "ads": {
+                "gameover": {
+                    "type": "interstitial", 
+                    "id": "ca-app-pub-2650021065162622/6532757918"
+                }, 
+                "banner": {
+                    "type": "banner", 
+                    "id": "ca-app-pub-2650021065162622/2160488669",
+                    "alignment": "bottom",
+                    "height": 60
+                },
+                "revive": {
+                    "type": "rewarded_video",
+                    "id": "ca-app-pub-2650021065162622/4505496694"
+                }
+            }
+        }, 
+        "sdkboxplay": {
+            "leaderboards": [
+                {
+                    "id": "CgkIqsHpuowbEAIQAg", 
+                    "name": "High Scores"
+                }
+            ], 
+            "achievements": [
+                {
+                    "incremental": false, 
+                    "id": "CgkIqsHpuowbEAIQAw", 
+                    "name": "Bronze Bro Award"
+                }, 
+                {
+                    "incremental": false, 
+                    "id": "CgkIqsHpuowbEAIQBA", 
+                    "name": "Silver Bro Award"
+                }, 
+                {
+                    "incremental": false, 
+                    "id": "CgkIqsHpuowbEAIQBQ", 
+                    "name": "Golden Bro Award"
+                }, 
+                {
+                    "incremental": false, 
+                    "id": "CgkIqsHpuowbEAIQBg", 
+                    "name": "Platinum Bro Award"
+                }
+            ], 
+            "debug": false,
+            "connect_on_start": true, 
+            "show_achievement_notification": true
+        },
+        "iap":{
+            "key": "MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAo6HOBxVVBwW4ouMsvqRRZ0VrRCbc/qnyLFQPap4jDLrxRqalZScELuXBIb1Mo1O7D9YiMs0OweB2I3PArS1m5tnQQntzE3d0iao7pXGBnMARECc0OsDXCdIPzMBhW9F2nXUkmtbKzPtU5henWSZp5HRRWLp0cmTVSua6Xn9JFK56Iyr731WmXJSJ9jkvCfJDRL7LMMgj1YdVIcYy0uBZph0w71Y2SjNj1US9vgY4+esrqoeKgJdmdb0TetGxA1ZYpvqO29ttnoGlcERGFGqLGA5iL8knHHmwg0cKXard7AwChlYDT7LnAkoFU+rBhj3Xg+O+dYskbxESLD+lMsA76QIDAQAB",
+            "items":{
+                "no_ads":{
+                    "type": "non_consumable",
+                    "id":"io.mindlessgames.skaterbro.no_ads"
+                }
+            }
+        },
+        "Review": {
+            "LaunchLimit": 3,
+            "DayForReminding": 1,
+            "tryPromptWhenInit": true,
+            "DayLimit": 0,
+            "LaunchForReminding": 2,
+            "UserEventLimit": 0
+        }
+    }, 
+    "ios": {
+        "Facebook": {
+            "debug": false
+        },
+        "Share": {
+            "platforms": {
+                "SMS": {}, 
+                "Twitter": {
+                    "params": {
+                        "secret": "zBqGiYgphiPsu5HYtbKomI4XCxcxPvGsPe9JykYTYOqeKBlUQF",
+                        "key": "ICTLqKk0SILDbt8UUDhfv2PNp"
+                    }
+                }, 
+                "Facebook": {}, 
+                "Mail": {}
+            }
+        }, 
+        "AdMob": {
+            "testdevice": "kGADSimulatorID",
+            "test": false,
+            "cache": {
+                "gameover": true, 
+                "home": true
+            }, 
+            "safearea": true, 
+            "ads": {
+                "gameover": {
+                    "type": "interstitial", 
+                    "id": "ca-app-pub-2650021065162622/9071237446"
+                }, 
+                "banner": {
+                    "type": "banner", 
+                    "id": "ca-app-pub-2650021065162622/5744510454",
+                    "alignment": "bottom",
+                    "height": 60
+                },
+                "revive": {
+                    "type": "rewarded_video",
+                    "id": "ca-app-pub-2650021065162622/8627029946"
+                }
+            }
+        }, 
+        "sdkboxplay": {
+            "leaderboards": [
+                {
+                    "id": "skaterbro_highscores", 
+                    "name": "High Scores"
+                }
+            ], 
+            "achievements": [
+                {
+                    "incremental": false, 
+                    "id": "bronze", 
+                    "name": "Bronze Bro Award"
+                }, 
+                {
+                    "incremental": false, 
+                    "id": "silver", 
+                    "name": "Silver Bro Award"
+                }, 
+                {
+                    "incremental": false, 
+                    "id": "gold", 
+                    "name": "Golden Bro Award"
+                }, 
+                {
+                    "incremental": false, 
+                    "id": "platinum", 
+                    "name": "Platinum Bro Award"
+                }
+            ], 
+            "debug": false,
+            "connect_on_start": true,
+            "show_achievement_notification": true
+        },
+        "iap": {
+            "items": {
+                "no_ads": {
+                    "type": "non_consumable",
+                    "id": "io.mindlessgames.skaterbro.no_ads"
+                }
+            }
+        },
+        "Review": {
+            "LaunchLimit": 3,
+            "DayForReminding": 1,
+            "tryPromptWhenInit": true,
+            "AppID": "1345052594",
+            "DayLimit": 0,
+            "LaunchForReminding": 2,
+            "UserEventLimit": 0
+        }
+    }
+}

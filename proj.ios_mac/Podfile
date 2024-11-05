@@ -1,0 +1,54 @@
+target 'skaterbro-desktop' do
+  platform :osx, '10.7'
+  
+  # Uncomment the next line if you're using Swift or would like to use dynamic frameworks
+  # use_frameworks!
+
+  # Pods for skaterbro-desktop
+
+end
+
+target 'skaterbro-mobile' do
+  platform :ios, '9.0'
+    
+  # Uncomment the next line if you're using Swift or would like to use dynamic frameworks
+  use_frameworks!
+
+  # Pods for skaterbro-mobile
+
+  # Crashlytics
+  pod 'Fabric'
+  pod 'Crashlytics'
+  
+  # Twitter (replaced from SDKBOX)
+  pod 'TwitterKit', '>= 3.4.2'
+  
+  # Facebook (replaced from SDKBOX) (for FB/Instagram ad conversion tracking)
+  # version 4.39.0 throws this error when attempting to log in:
+  # Error Domain=com.facebook.sdk.core Code=3 "(null)"
+  # downgrading to 4.38.0 fixes the problem; see here:
+  # https://stackoverflow.com/questions/49124804/ios-facebook-login-sdk-4-28-0-error-code-3
+  pod 'FBSDKCoreKit', '4.38.0'
+  pod 'FBSDKLoginKit', '4.38.0'
+  pod 'FBSDKShareKit', '4.38.0'
+  
+  # AdMob
+  pod 'Google-Mobile-Ads-SDK'
+  
+  # AdMob Mediation Adapters
+  # Facebook Audience Network Ads
+  # * contains both Facebook Audience Network SDK and its AdMob mediation adapter
+  # https://developers.google.com/ad-manager/mobile-ads-sdk/ios/mediation/facebook
+  pod 'GoogleMobileAdsMediationFacebook'
+  # Unity Ads
+  # * contains both Unity SDK and its AdMob mediation adapter
+  # https://developers.google.com/ad-manager/mobile-ads-sdk/ios/mediation/unity
+  pod 'GoogleMobileAdsMediationUnity'
+  # MoPub Ads
+  # * contains both MoPub SDK and its AdMob mediation adapter
+  # https://developers.google.com/ad-manager/mobile-ads-sdk/ios/mediation/mopub
+  pod 'GoogleMobileAdsMediationMoPub'
+  
+  # Firebase (for AdMob conversion tracking)
+  pod 'Firebase/Core'
+end

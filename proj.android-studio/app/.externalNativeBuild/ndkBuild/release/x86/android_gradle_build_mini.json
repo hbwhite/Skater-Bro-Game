@@ -1,0 +1,113 @@
+{
+  "buildFiles": [
+    "/Users/harrison/Desktop/skaterbro/proj.android-studio/app/jni/Android.mk",
+    "/Users/harrison/Desktop/skaterbro/proj.android-studio/app/jni/Application.mk"
+  ],
+  "cleanCommands": [
+    "/Users/harrison/Library/Android/sdk/ndk-bundle/ndk-build NDK_PROJECT_PATH\u003dnull APP_BUILD_SCRIPT\u003d/Users/harrison/Desktop/skaterbro/proj.android-studio/app/jni/Android.mk NDK_APPLICATION_MK\u003d/Users/harrison/Desktop/skaterbro/proj.android-studio/app/jni/Application.mk APP_ABI\u003dx86 NDK_ALL_ABIS\u003dx86 NDK_DEBUG\u003d0 APP_PLATFORM\u003dandroid-16 NDK_OUT\u003d/Users/harrison/Desktop/skaterbro/proj.android-studio/app/build/intermediates/ndkBuild/release/obj NDK_LIBS_OUT\u003d/Users/harrison/Desktop/skaterbro/proj.android-studio/app/build/intermediates/ndkBuild/release/lib NDK_TOOLCHAIN_VERSION\u003dclang APP_PLATFORM\u003dandroid-16 NDK_MODULE_PATH\u003d/Users/harrison/Desktop/skaterbro/cocos2d:/Users/harrison/Desktop/skaterbro/cocos2d/cocos:/Users/harrison/Desktop/skaterbro/cocos2d/external NDK_DEBUG\u003d0 clean"
+  ],
+  "libraries": {
+    "cocosbuilder-release-x86": {
+      "artifactName": "cocosbuilder",
+      "buildCommand": "/Users/harrison/Library/Android/sdk/ndk-bundle/ndk-build NDK_PROJECT_PATH\u003dnull APP_BUILD_SCRIPT\u003d/Users/harrison/Desktop/skaterbro/proj.android-studio/app/jni/Android.mk NDK_APPLICATION_MK\u003d/Users/harrison/Desktop/skaterbro/proj.android-studio/app/jni/Application.mk APP_ABI\u003dx86 NDK_ALL_ABIS\u003dx86 NDK_DEBUG\u003d0 APP_PLATFORM\u003dandroid-16 NDK_OUT\u003d/Users/harrison/Desktop/skaterbro/proj.android-studio/app/build/intermediates/ndkBuild/release/obj NDK_LIBS_OUT\u003d/Users/harrison/Desktop/skaterbro/proj.android-studio/app/build/intermediates/ndkBuild/release/lib NDK_TOOLCHAIN_VERSION\u003dclang APP_PLATFORM\u003dandroid-16 NDK_MODULE_PATH\u003d/Users/harrison/Desktop/skaterbro/cocos2d:/Users/harrison/Desktop/skaterbro/cocos2d/cocos:/Users/harrison/Desktop/skaterbro/cocos2d/external -j8 NDK_DEBUG\u003d0 /Users/harrison/Desktop/skaterbro/proj.android-studio/app/build/intermediates/ndkBuild/release/obj/local/x86/libcocosbuilder.a",
+      "abi": "x86",
+      "output": "/Users/harrison/Desktop/skaterbro/proj.android-studio/app/build/intermediates/ndkBuild/release/obj/local/x86/libcocosbuilder.a"
+    },
+    "MyGame-release-x86": {
+      "artifactName": "MyGame",
+      "buildCommand": "/Users/harrison/Library/Android/sdk/ndk-bundle/ndk-build NDK_PROJECT_PATH\u003dnull APP_BUILD_SCRIPT\u003d/Users/harrison/Desktop/skaterbro/proj.android-studio/app/jni/Android.mk NDK_APPLICATION_MK\u003d/Users/harrison/Desktop/skaterbro/proj.android-studio/app/jni/Application.mk APP_ABI\u003dx86 NDK_ALL_ABIS\u003dx86 NDK_DEBUG\u003d0 APP_PLATFORM\u003dandroid-16 NDK_OUT\u003d/Users/harrison/Desktop/skaterbro/proj.android-studio/app/build/intermediates/ndkBuild/release/obj NDK_LIBS_OUT\u003d/Users/harrison/Desktop/skaterbro/proj.android-studio/app/build/intermediates/ndkBuild/release/lib NDK_TOOLCHAIN_VERSION\u003dclang APP_PLATFORM\u003dandroid-16 NDK_MODULE_PATH\u003d/Users/harrison/Desktop/skaterbro/cocos2d:/Users/harrison/Desktop/skaterbro/cocos2d/cocos:/Users/harrison/Desktop/skaterbro/cocos2d/external -j8 NDK_DEBUG\u003d0 /Users/harrison/Desktop/skaterbro/proj.android-studio/app/build/intermediates/ndkBuild/release/obj/local/x86/libMyGame.so",
+      "abi": "x86",
+      "output": "/Users/harrison/Desktop/skaterbro/proj.android-studio/app/build/intermediates/ndkBuild/release/obj/local/x86/libMyGame.so"
+    },
+    "network-release-x86": {
+      "artifactName": "network",
+      "buildCommand": "/Users/harrison/Library/Android/sdk/ndk-bundle/ndk-build NDK_PROJECT_PATH\u003dnull APP_BUILD_SCRIPT\u003d/Users/harrison/Desktop/skaterbro/proj.android-studio/app/jni/Android.mk NDK_APPLICATION_MK\u003d/Users/harrison/Desktop/skaterbro/proj.android-studio/app/jni/Application.mk APP_ABI\u003dx86 NDK_ALL_ABIS\u003dx86 NDK_DEBUG\u003d0 APP_PLATFORM\u003dandroid-16 NDK_OUT\u003d/Users/harrison/Desktop/skaterbro/proj.android-studio/app/build/intermediates/ndkBuild/release/obj NDK_LIBS_OUT\u003d/Users/harrison/Desktop/skaterbro/proj.android-studio/app/build/intermediates/ndkBuild/release/lib NDK_TOOLCHAIN_VERSION\u003dclang APP_PLATFORM\u003dandroid-16 NDK_MODULE_PATH\u003d/Users/harrison/Desktop/skaterbro/cocos2d:/Users/harrison/Desktop/skaterbro/cocos2d/cocos:/Users/harrison/Desktop/skaterbro/cocos2d/external -j8 NDK_DEBUG\u003d0 /Users/harrison/Desktop/skaterbro/proj.android-studio/app/build/intermediates/ndkBuild/release/obj/local/x86/libnetwork.a",
+      "abi": "x86",
+      "output": "/Users/harrison/Desktop/skaterbro/proj.android-studio/app/build/intermediates/ndkBuild/release/obj/local/x86/libnetwork.a"
+    },
+    "cocos2dxinternal-release-x86": {
+      "artifactName": "cocos2dxinternal",
+      "buildCommand": "/Users/harrison/Library/Android/sdk/ndk-bundle/ndk-build NDK_PROJECT_PATH\u003dnull APP_BUILD_SCRIPT\u003d/Users/harrison/Desktop/skaterbro/proj.android-studio/app/jni/Android.mk NDK_APPLICATION_MK\u003d/Users/harrison/Desktop/skaterbro/proj.android-studio/app/jni/Application.mk APP_ABI\u003dx86 NDK_ALL_ABIS\u003dx86 NDK_DEBUG\u003d0 APP_PLATFORM\u003dandroid-16 NDK_OUT\u003d/Users/harrison/Desktop/skaterbro/proj.android-studio/app/build/intermediates/ndkBuild/release/obj NDK_LIBS_OUT\u003d/Users/harrison/Desktop/skaterbro/proj.android-studio/app/build/intermediates/ndkBuild/release/lib NDK_TOOLCHAIN_VERSION\u003dclang APP_PLATFORM\u003dandroid-16 NDK_MODULE_PATH\u003d/Users/harrison/Desktop/skaterbro/cocos2d:/Users/harrison/Desktop/skaterbro/cocos2d/cocos:/Users/harrison/Desktop/skaterbro/cocos2d/external -j8 NDK_DEBUG\u003d0 /Users/harrison/Desktop/skaterbro/proj.android-studio/app/build/intermediates/ndkBuild/release/obj/local/x86/libcocos2dxinternal.a",
+      "abi": "x86",
+      "output": "/Users/harrison/Desktop/skaterbro/proj.android-studio/app/build/intermediates/ndkBuild/release/obj/local/x86/libcocos2dxinternal.a"
+    },
+    "cocosdenshion-release-x86": {
+      "artifactName": "cocosdenshion",
+      "buildCommand": "/Users/harrison/Library/Android/sdk/ndk-bundle/ndk-build NDK_PROJECT_PATH\u003dnull APP_BUILD_SCRIPT\u003d/Users/harrison/Desktop/skaterbro/proj.android-studio/app/jni/Android.mk NDK_APPLICATION_MK\u003d/Users/harrison/Desktop/skaterbro/proj.android-studio/app/jni/Application.mk APP_ABI\u003dx86 NDK_ALL_ABIS\u003dx86 NDK_DEBUG\u003d0 APP_PLATFORM\u003dandroid-16 NDK_OUT\u003d/Users/harrison/Desktop/skaterbro/proj.android-studio/app/build/intermediates/ndkBuild/release/obj NDK_LIBS_OUT\u003d/Users/harrison/Desktop/skaterbro/proj.android-studio/app/build/intermediates/ndkBuild/release/lib NDK_TOOLCHAIN_VERSION\u003dclang APP_PLATFORM\u003dandroid-16 NDK_MODULE_PATH\u003d/Users/harrison/Desktop/skaterbro/cocos2d:/Users/harrison/Desktop/skaterbro/cocos2d/cocos:/Users/harrison/Desktop/skaterbro/cocos2d/external -j8 NDK_DEBUG\u003d0 /Users/harrison/Desktop/skaterbro/proj.android-studio/app/build/intermediates/ndkBuild/release/obj/local/x86/libcocosdenshion.a",
+      "abi": "x86",
+      "output": "/Users/harrison/Desktop/skaterbro/proj.android-studio/app/build/intermediates/ndkBuild/release/obj/local/x86/libcocosdenshion.a"
+    },
+    "flatbuffers-release-x86": {
+      "artifactName": "flatbuffers",
+      "buildCommand": "/Users/harrison/Library/Android/sdk/ndk-bundle/ndk-build NDK_PROJECT_PATH\u003dnull APP_BUILD_SCRIPT\u003d/Users/harrison/Desktop/skaterbro/proj.android-studio/app/jni/Android.mk NDK_APPLICATION_MK\u003d/Users/harrison/Desktop/skaterbro/proj.android-studio/app/jni/Application.mk APP_ABI\u003dx86 NDK_ALL_ABIS\u003dx86 NDK_DEBUG\u003d0 APP_PLATFORM\u003dandroid-16 NDK_OUT\u003d/Users/harrison/Desktop/skaterbro/proj.android-studio/app/build/intermediates/ndkBuild/release/obj NDK_LIBS_OUT\u003d/Users/harrison/Desktop/skaterbro/proj.android-studio/app/build/intermediates/ndkBuild/release/lib NDK_TOOLCHAIN_VERSION\u003dclang APP_PLATFORM\u003dandroid-16 NDK_MODULE_PATH\u003d/Users/harrison/Desktop/skaterbro/cocos2d:/Users/harrison/Desktop/skaterbro/cocos2d/cocos:/Users/harrison/Desktop/skaterbro/cocos2d/external -j8 NDK_DEBUG\u003d0 /Users/harrison/Desktop/skaterbro/proj.android-studio/app/build/intermediates/ndkBuild/release/obj/local/x86/flatbuffers.a",
+      "abi": "x86",
+      "output": "/Users/harrison/Desktop/skaterbro/proj.android-studio/app/build/intermediates/ndkBuild/release/obj/local/x86/flatbuffers.a"
+    },
+    "cocos3d-release-x86": {
+      "artifactName": "cocos3d",
+      "buildCommand": "/Users/harrison/Library/Android/sdk/ndk-bundle/ndk-build NDK_PROJECT_PATH\u003dnull APP_BUILD_SCRIPT\u003d/Users/harrison/Desktop/skaterbro/proj.android-studio/app/jni/Android.mk NDK_APPLICATION_MK\u003d/Users/harrison/Desktop/skaterbro/proj.android-studio/app/jni/Application.mk APP_ABI\u003dx86 NDK_ALL_ABIS\u003dx86 NDK_DEBUG\u003d0 APP_PLATFORM\u003dandroid-16 NDK_OUT\u003d/Users/harrison/Desktop/skaterbro/proj.android-studio/app/build/intermediates/ndkBuild/release/obj NDK_LIBS_OUT\u003d/Users/harrison/Desktop/skaterbro/proj.android-studio/app/build/intermediates/ndkBuild/release/lib NDK_TOOLCHAIN_VERSION\u003dclang APP_PLATFORM\u003dandroid-16 NDK_MODULE_PATH\u003d/Users/harrison/Desktop/skaterbro/cocos2d:/Users/harrison/Desktop/skaterbro/cocos2d/cocos:/Users/harrison/Desktop/skaterbro/cocos2d/external -j8 NDK_DEBUG\u003d0 /Users/harrison/Desktop/skaterbro/proj.android-studio/app/build/intermediates/ndkBuild/release/obj/local/x86/libcocos3d.a",
+      "abi": "x86",
+      "output": "/Users/harrison/Desktop/skaterbro/proj.android-studio/app/build/intermediates/ndkBuild/release/obj/local/x86/libcocos3d.a"
+    },
+    "pvmp3dec-release-x86": {
+      "artifactName": "pvmp3dec",
+      "buildCommand": "/Users/harrison/Library/Android/sdk/ndk-bundle/ndk-build NDK_PROJECT_PATH\u003dnull APP_BUILD_SCRIPT\u003d/Users/harrison/Desktop/skaterbro/proj.android-studio/app/jni/Android.mk NDK_APPLICATION_MK\u003d/Users/harrison/Desktop/skaterbro/proj.android-studio/app/jni/Application.mk APP_ABI\u003dx86 NDK_ALL_ABIS\u003dx86 NDK_DEBUG\u003d0 APP_PLATFORM\u003dandroid-16 NDK_OUT\u003d/Users/harrison/Desktop/skaterbro/proj.android-studio/app/build/intermediates/ndkBuild/release/obj NDK_LIBS_OUT\u003d/Users/harrison/Desktop/skaterbro/proj.android-studio/app/build/intermediates/ndkBuild/release/lib NDK_TOOLCHAIN_VERSION\u003dclang APP_PLATFORM\u003dandroid-16 NDK_MODULE_PATH\u003d/Users/harrison/Desktop/skaterbro/cocos2d:/Users/harrison/Desktop/skaterbro/cocos2d/cocos:/Users/harrison/Desktop/skaterbro/cocos2d/external -j8 NDK_DEBUG\u003d0 /Users/harrison/Desktop/skaterbro/proj.android-studio/app/build/intermediates/ndkBuild/release/obj/local/x86/libpvmp3dec.a",
+      "abi": "x86",
+      "output": "/Users/harrison/Desktop/skaterbro/proj.android-studio/app/build/intermediates/ndkBuild/release/obj/local/x86/libpvmp3dec.a"
+    },
+    "ui-release-x86": {
+      "artifactName": "ui",
+      "buildCommand": "/Users/harrison/Library/Android/sdk/ndk-bundle/ndk-build NDK_PROJECT_PATH\u003dnull APP_BUILD_SCRIPT\u003d/Users/harrison/Desktop/skaterbro/proj.android-studio/app/jni/Android.mk NDK_APPLICATION_MK\u003d/Users/harrison/Desktop/skaterbro/proj.android-studio/app/jni/Application.mk APP_ABI\u003dx86 NDK_ALL_ABIS\u003dx86 NDK_DEBUG\u003d0 APP_PLATFORM\u003dandroid-16 NDK_OUT\u003d/Users/harrison/Desktop/skaterbro/proj.android-studio/app/build/intermediates/ndkBuild/release/obj NDK_LIBS_OUT\u003d/Users/harrison/Desktop/skaterbro/proj.android-studio/app/build/intermediates/ndkBuild/release/lib NDK_TOOLCHAIN_VERSION\u003dclang APP_PLATFORM\u003dandroid-16 NDK_MODULE_PATH\u003d/Users/harrison/Desktop/skaterbro/cocos2d:/Users/harrison/Desktop/skaterbro/cocos2d/cocos:/Users/harrison/Desktop/skaterbro/cocos2d/external -j8 NDK_DEBUG\u003d0 /Users/harrison/Desktop/skaterbro/proj.android-studio/app/build/intermediates/ndkBuild/release/obj/local/x86/libui.a",
+      "abi": "x86",
+      "output": "/Users/harrison/Desktop/skaterbro/proj.android-studio/app/build/intermediates/ndkBuild/release/obj/local/x86/libui.a"
+    },
+    "cpufeatures-release-x86": {
+      "artifactName": "cpufeatures",
+      "buildCommand": "/Users/harrison/Library/Android/sdk/ndk-bundle/ndk-build NDK_PROJECT_PATH\u003dnull APP_BUILD_SCRIPT\u003d/Users/harrison/Desktop/skaterbro/proj.android-studio/app/jni/Android.mk NDK_APPLICATION_MK\u003d/Users/harrison/Desktop/skaterbro/proj.android-studio/app/jni/Application.mk APP_ABI\u003dx86 NDK_ALL_ABIS\u003dx86 NDK_DEBUG\u003d0 APP_PLATFORM\u003dandroid-16 NDK_OUT\u003d/Users/harrison/Desktop/skaterbro/proj.android-studio/app/build/intermediates/ndkBuild/release/obj NDK_LIBS_OUT\u003d/Users/harrison/Desktop/skaterbro/proj.android-studio/app/build/intermediates/ndkBuild/release/lib NDK_TOOLCHAIN_VERSION\u003dclang APP_PLATFORM\u003dandroid-16 NDK_MODULE_PATH\u003d/Users/harrison/Desktop/skaterbro/cocos2d:/Users/harrison/Desktop/skaterbro/cocos2d/cocos:/Users/harrison/Desktop/skaterbro/cocos2d/external -j8 NDK_DEBUG\u003d0 /Users/harrison/Desktop/skaterbro/proj.android-studio/app/build/intermediates/ndkBuild/release/obj/local/x86/libcpufeatures.a",
+      "abi": "x86",
+      "output": "/Users/harrison/Desktop/skaterbro/proj.android-studio/app/build/intermediates/ndkBuild/release/obj/local/x86/libcpufeatures.a"
+    },
+    "recast-release-x86": {
+      "artifactName": "recast",
+      "buildCommand": "/Users/harrison/Library/Android/sdk/ndk-bundle/ndk-build NDK_PROJECT_PATH\u003dnull APP_BUILD_SCRIPT\u003d/Users/harrison/Desktop/skaterbro/proj.android-studio/app/jni/Android.mk NDK_APPLICATION_MK\u003d/Users/harrison/Desktop/skaterbro/proj.android-studio/app/jni/Application.mk APP_ABI\u003dx86 NDK_ALL_ABIS\u003dx86 NDK_DEBUG\u003d0 APP_PLATFORM\u003dandroid-16 NDK_OUT\u003d/Users/harrison/Desktop/skaterbro/proj.android-studio/app/build/intermediates/ndkBuild/release/obj NDK_LIBS_OUT\u003d/Users/harrison/Desktop/skaterbro/proj.android-studio/app/build/intermediates/ndkBuild/release/lib NDK_TOOLCHAIN_VERSION\u003dclang APP_PLATFORM\u003dandroid-16 NDK_MODULE_PATH\u003d/Users/harrison/Desktop/skaterbro/cocos2d:/Users/harrison/Desktop/skaterbro/cocos2d/cocos:/Users/harrison/Desktop/skaterbro/cocos2d/external -j8 NDK_DEBUG\u003d0 /Users/harrison/Desktop/skaterbro/proj.android-studio/app/build/intermediates/ndkBuild/release/obj/local/x86/librecast.a",
+      "abi": "x86",
+      "output": "/Users/harrison/Desktop/skaterbro/proj.android-studio/app/build/intermediates/ndkBuild/release/obj/local/x86/librecast.a"
+    },
+    "extension-release-x86": {
+      "artifactName": "extension",
+      "buildCommand": "/Users/harrison/Library/Android/sdk/ndk-bundle/ndk-build NDK_PROJECT_PATH\u003dnull APP_BUILD_SCRIPT\u003d/Users/harrison/Desktop/skaterbro/proj.android-studio/app/jni/Android.mk NDK_APPLICATION_MK\u003d/Users/harrison/Desktop/skaterbro/proj.android-studio/app/jni/Application.mk APP_ABI\u003dx86 NDK_ALL_ABIS\u003dx86 NDK_DEBUG\u003d0 APP_PLATFORM\u003dandroid-16 NDK_OUT\u003d/Users/harrison/Desktop/skaterbro/proj.android-studio/app/build/intermediates/ndkBuild/release/obj NDK_LIBS_OUT\u003d/Users/harrison/Desktop/skaterbro/proj.android-studio/app/build/intermediates/ndkBuild/release/lib NDK_TOOLCHAIN_VERSION\u003dclang APP_PLATFORM\u003dandroid-16 NDK_MODULE_PATH\u003d/Users/harrison/Desktop/skaterbro/cocos2d:/Users/harrison/Desktop/skaterbro/cocos2d/cocos:/Users/harrison/Desktop/skaterbro/cocos2d/external -j8 NDK_DEBUG\u003d0 /Users/harrison/Desktop/skaterbro/proj.android-studio/app/build/intermediates/ndkBuild/release/obj/local/x86/libextension.a",
+      "abi": "x86",
+      "output": "/Users/harrison/Desktop/skaterbro/proj.android-studio/app/build/intermediates/ndkBuild/release/obj/local/x86/libextension.a"
+    },
+    "vorbisidec-release-x86": {
+      "artifactName": "vorbisidec",
+      "buildCommand": "/Users/harrison/Library/Android/sdk/ndk-bundle/ndk-build NDK_PROJECT_PATH\u003dnull APP_BUILD_SCRIPT\u003d/Users/harrison/Desktop/skaterbro/proj.android-studio/app/jni/Android.mk NDK_APPLICATION_MK\u003d/Users/harrison/Desktop/skaterbro/proj.android-studio/app/jni/Application.mk APP_ABI\u003dx86 NDK_ALL_ABIS\u003dx86 NDK_DEBUG\u003d0 APP_PLATFORM\u003dandroid-16 NDK_OUT\u003d/Users/harrison/Desktop/skaterbro/proj.android-studio/app/build/intermediates/ndkBuild/release/obj NDK_LIBS_OUT\u003d/Users/harrison/Desktop/skaterbro/proj.android-studio/app/build/intermediates/ndkBuild/release/lib NDK_TOOLCHAIN_VERSION\u003dclang APP_PLATFORM\u003dandroid-16 NDK_MODULE_PATH\u003d/Users/harrison/Desktop/skaterbro/cocos2d:/Users/harrison/Desktop/skaterbro/cocos2d/cocos:/Users/harrison/Desktop/skaterbro/cocos2d/external -j8 NDK_DEBUG\u003d0 /Users/harrison/Desktop/skaterbro/proj.android-studio/app/build/intermediates/ndkBuild/release/obj/local/x86/libvorbisidec.a",
+      "abi": "x86",
+      "output": "/Users/harrison/Desktop/skaterbro/proj.android-studio/app/build/intermediates/ndkBuild/release/obj/local/x86/libvorbisidec.a"
+    },
+    "audioengine-release-x86": {
+      "artifactName": "audioengine",
+      "buildCommand": "/Users/harrison/Library/Android/sdk/ndk-bundle/ndk-build NDK_PROJECT_PATH\u003dnull APP_BUILD_SCRIPT\u003d/Users/harrison/Desktop/skaterbro/proj.android-studio/app/jni/Android.mk NDK_APPLICATION_MK\u003d/Users/harrison/Desktop/skaterbro/proj.android-studio/app/jni/Application.mk APP_ABI\u003dx86 NDK_ALL_ABIS\u003dx86 NDK_DEBUG\u003d0 APP_PLATFORM\u003dandroid-16 NDK_OUT\u003d/Users/harrison/Desktop/skaterbro/proj.android-studio/app/build/intermediates/ndkBuild/release/obj NDK_LIBS_OUT\u003d/Users/harrison/Desktop/skaterbro/proj.android-studio/app/build/intermediates/ndkBuild/release/lib NDK_TOOLCHAIN_VERSION\u003dclang APP_PLATFORM\u003dandroid-16 NDK_MODULE_PATH\u003d/Users/harrison/Desktop/skaterbro/cocos2d:/Users/harrison/Desktop/skaterbro/cocos2d/cocos:/Users/harrison/Desktop/skaterbro/cocos2d/external -j8 NDK_DEBUG\u003d0 /Users/harrison/Desktop/skaterbro/proj.android-studio/app/build/intermediates/ndkBuild/release/obj/local/x86/libaudioengine.a",
+      "abi": "x86",
+      "output": "/Users/harrison/Desktop/skaterbro/proj.android-studio/app/build/intermediates/ndkBuild/release/obj/local/x86/libaudioengine.a"
+    },
+    "cocostudio-release-x86": {
+      "artifactName": "cocostudio",
+      "buildCommand": "/Users/harrison/Library/Android/sdk/ndk-bundle/ndk-build NDK_PROJECT_PATH\u003dnull APP_BUILD_SCRIPT\u003d/Users/harrison/Desktop/skaterbro/proj.android-studio/app/jni/Android.mk NDK_APPLICATION_MK\u003d/Users/harrison/Desktop/skaterbro/proj.android-studio/app/jni/Application.mk APP_ABI\u003dx86 NDK_ALL_ABIS\u003dx86 NDK_DEBUG\u003d0 APP_PLATFORM\u003dandroid-16 NDK_OUT\u003d/Users/harrison/Desktop/skaterbro/proj.android-studio/app/build/intermediates/ndkBuild/release/obj NDK_LIBS_OUT\u003d/Users/harrison/Desktop/skaterbro/proj.android-studio/app/build/intermediates/ndkBuild/release/lib NDK_TOOLCHAIN_VERSION\u003dclang APP_PLATFORM\u003dandroid-16 NDK_MODULE_PATH\u003d/Users/harrison/Desktop/skaterbro/cocos2d:/Users/harrison/Desktop/skaterbro/cocos2d/cocos:/Users/harrison/Desktop/skaterbro/cocos2d/external -j8 NDK_DEBUG\u003d0 /Users/harrison/Desktop/skaterbro/proj.android-studio/app/build/intermediates/ndkBuild/release/obj/local/x86/libcocostudio.a",
+      "abi": "x86",
+      "output": "/Users/harrison/Desktop/skaterbro/proj.android-studio/app/build/intermediates/ndkBuild/release/obj/local/x86/libcocostudio.a"
+    },
+    "spine-release-x86": {
+      "artifactName": "spine",
+      "buildCommand": "/Users/harrison/Library/Android/sdk/ndk-bundle/ndk-build NDK_PROJECT_PATH\u003dnull APP_BUILD_SCRIPT\u003d/Users/harrison/Desktop/skaterbro/proj.android-studio/app/jni/Android.mk NDK_APPLICATION_MK\u003d/Users/harrison/Desktop/skaterbro/proj.android-studio/app/jni/Application.mk APP_ABI\u003dx86 NDK_ALL_ABIS\u003dx86 NDK_DEBUG\u003d0 APP_PLATFORM\u003dandroid-16 NDK_OUT\u003d/Users/harrison/Desktop/skaterbro/proj.android-studio/app/build/intermediates/ndkBuild/release/obj NDK_LIBS_OUT\u003d/Users/harrison/Desktop/skaterbro/proj.android-studio/app/build/intermediates/ndkBuild/release/lib NDK_TOOLCHAIN_VERSION\u003dclang APP_PLATFORM\u003dandroid-16 NDK_MODULE_PATH\u003d/Users/harrison/Desktop/skaterbro/cocos2d:/Users/harrison/Desktop/skaterbro/cocos2d/cocos:/Users/harrison/Desktop/skaterbro/cocos2d/external -j8 NDK_DEBUG\u003d0 /Users/harrison/Desktop/skaterbro/proj.android-studio/app/build/intermediates/ndkBuild/release/obj/local/x86/libspine.a",
+      "abi": "x86",
+      "output": "/Users/harrison/Desktop/skaterbro/proj.android-studio/app/build/intermediates/ndkBuild/release/obj/local/x86/libspine.a"
+    },
+    "cocos2dandroid-release-x86": {
+      "artifactName": "cocos2dandroid",
+      "buildCommand": "/Users/harrison/Library/Android/sdk/ndk-bundle/ndk-build NDK_PROJECT_PATH\u003dnull APP_BUILD_SCRIPT\u003d/Users/harrison/Desktop/skaterbro/proj.android-studio/app/jni/Android.mk NDK_APPLICATION_MK\u003d/Users/harrison/Desktop/skaterbro/proj.android-studio/app/jni/Application.mk APP_ABI\u003dx86 NDK_ALL_ABIS\u003dx86 NDK_DEBUG\u003d0 APP_PLATFORM\u003dandroid-16 NDK_OUT\u003d/Users/harrison/Desktop/skaterbro/proj.android-studio/app/build/intermediates/ndkBuild/release/obj NDK_LIBS_OUT\u003d/Users/harrison/Desktop/skaterbro/proj.android-studio/app/build/intermediates/ndkBuild/release/lib NDK_TOOLCHAIN_VERSION\u003dclang APP_PLATFORM\u003dandroid-16 NDK_MODULE_PATH\u003d/Users/harrison/Desktop/skaterbro/cocos2d:/Users/harrison/Desktop/skaterbro/cocos2d/cocos:/Users/harrison/Desktop/skaterbro/cocos2d/external -j8 NDK_DEBUG\u003d0 /Users/harrison/Desktop/skaterbro/proj.android-studio/app/build/intermediates/ndkBuild/release/obj/local/x86/libcocos2dandroid.a",
+      "abi": "x86",
+      "output": "/Users/harrison/Desktop/skaterbro/proj.android-studio/app/build/intermediates/ndkBuild/release/obj/local/x86/libcocos2dandroid.a"
+    }
+  }
+}

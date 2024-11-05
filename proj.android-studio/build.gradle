@@ -1,0 +1,97 @@
+// Top-level build file where you can add configuration options common to all sub-projects/modules.
+
+buildscript {
+
+    // Gradle 4.1 and higher include support for Google's Maven repo using
+    // the google() method. And you need to include this repo to download
+    // Android plugin 3.0.0 or higher.
+
+    // https://developer.android.com/studio/releases/gradle-plugin.html
+
+    // If you're using a version of Gradle lower than 4.1, you must instead use:
+    // maven {
+    //     url 'https://maven.google.com'
+    // }
+    // An alternative URL is 'https://dl.google.com/dl/android/maven2/'
+
+    repositories {
+        jcenter()
+        mavenCentral()
+        google()
+    }
+    dependencies {
+        // https://developer.android.com/studio/releases/gradle-plugin.html
+        classpath 'com.android.tools.build:gradle:3.2.1'
+
+        // Firebase for admob/firebase integration
+        // Yes, it says to put it here and not in the app module's build.gradle file
+        classpath 'com.google.gms:google-services:4.2.0' // google-services plugin
+
+        // NOTE: Do not place your application dependencies here; they belong
+        // in the individual module build.gradle files
+    }
+}
+
+allprojects {
+    repositories {
+        jcenter()
+        mavenCentral()
+        google()
+    }
+
+    // hwmod
+    // https://medium.com/@ali.muzaffar/gradle-configure-variables-for-all-android-project-modules-in-one-place-5a6e56cd384e
+
+    // NDK supported ABIs:
+    // https://developer.android.com/ndk/guides/abis.html#sa
+
+    // Device architectures:
+    // https://forum.xda-developers.com/showthread.php?t=1596800
+
+    // abiFilters gradle property:
+    // https://google.github.io/android-gradle-dsl/current/com.android.build.gradle.internal.dsl.NdkOptions.html
+
+    // multiple APKs with different ABIs:
+    // https://developer.android.com/studio/build/configure-apk-splits.html#configure-abi-split
+
+    // the prebuilt libraries in cocos2d-x do not support x86_64
+    // workaround here:
+    // http://discuss.cocos2d-x.org/t/android-support-for-x86-64-architecture/41434
+
+    // ----
+
+    // myCompileSdkVersion -> compileSdkVersion
+
+    // myBuildToolsVersion -> buildToolsVersion
+
+    // myMinSdkVersion -> APP_PLATFORM
+    // Android NDK minimum supported SDK version is 14
+    // Facebook API requires SDK version 15
+
+    // myTargetSdkVersion -> targetSdkVersion
+    // Testing primarily on a Samsung Galaxy S8+ on API level 24
+
+    // myNDKToolchainVersion -> NDK_TOOLCHAIN_VERSION
+    // Define this variable as 4.9 to select that version of the GCC compiler.
+    // Define this variable as clang to select the Clang compiler, which is the default value for NDK r13 and later.
+    // https://developer.android.com/ndk/guides/application_mk.html
+
+    // Replaced by PROP_xxx variables in project's gradle.properties
+    // (Introduced in cocos2d-x 3.17
+//    project.ext {
+//        myCompileSdkVersion=27
+//        myBuildToolsVersion='27.0.3'
+//
+////        // dev utilizes minSDKVersion = 21 to allow the Android gradle plugin
+////        // to pre-dex each module and produce an APK that can be tested on
+////        // Android Lollipop without time consuming dex merging processes.
+////        myMinSdkVersion=21
+//        myMinSdkVersion=15
+//
+//        myTargetSdkVersion=26
+//        myNDKToolchainVersion='clang'
+//        //myAppABI='armeabi:armeabi-v7a:arm64-v8a:x86:x86_64:mips'
+//        myAppABI='armeabi:armeabi-v7a:arm64-v8a:x86'
+////        myAppABI='armeabi-v7a'
+//    }
+}
